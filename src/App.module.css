@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #3b3b3b;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(210, 194, 194, 0.3);
+}

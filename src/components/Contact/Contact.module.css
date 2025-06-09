@@ -1,0 +1,51 @@
+.grup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+  max-width: 200px;
+}
+
+.icon {
+  font-size: 18px;
+  color: #ccc;
+  margin-right: 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: start;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 0 1 calc(50% - 16px);
+  box-sizing: border-box;
+}
+
+.name {
+  font-weight: bold;
+  margin: 0;
+  color: #ccc;
+}
+
+.number {
+  margin: 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.button {
+  padding: 5px 10px;
+  border-radius: 6px;
+  background-color: #a29f9f;
+  cursor: pointer;
+  color: #2b2a2a;
+  transition: background-color 0.5s;
+}
+
+.button:hover {
+  background-color: #cc4343;
+  color: #ccc;
+}
