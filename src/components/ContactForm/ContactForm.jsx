@@ -10,7 +10,7 @@ const ContactForm = () => {
 
   const initialValues = {
     name: "",
-    number: "",
+    phone: "",
   };
 
   const validationSchema = Yup.object({
@@ -18,7 +18,7 @@ const ContactForm = () => {
       .min(3, "Too short!")
       .max(50, "Too long!")
       .required("Required"),
-    number: Yup.string()
+    phone: Yup.string()
       .min(3, "Too short!")
       .max(50, "Too long!")
       .required("Required"),
@@ -52,8 +52,8 @@ const ContactForm = () => {
         </label>
         <label className={css.label}>
           Number
-          <Field className={css.input} type="text" name="number" />
-          <ErrorMessage name="number" component="div" className={css.error} />
+          <Field className={css.input} type="text" name="phone" />
+          <ErrorMessage name="phone" component="div" className={css.error} />
         </label>
         <button className={css.button} type="submit">
           Add contact

@@ -1,9 +1,8 @@
 const AuthNav = () => {
   return (
     <div>
-      {/* твої посилання на Login/Registration */}
-      <a href="/register">Register</a>
-      <a href="/login">Login</a>
+      <Link to="/register">Register</Link>
+      <Link to="/login">Login</Link>
     </div>
   );
 };

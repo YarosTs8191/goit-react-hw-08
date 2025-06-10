@@ -10,6 +10,8 @@ const initialState = {
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
+  error: null,
+
 };
 
 const authSlice = createSlice({
@@ -51,6 +53,12 @@ const authSlice = createSlice({
       .addCase(refreshUser.rejected, (state) => {
         state.isRefreshing = false;
       }),
+      .addCase(register.rejected, (state, action) => {
+        state.error = action.payload;
+      })
+      .addCase(login.rejected, (state, action) => {
+        state.error = action.payload;
+      })
 });
 
 export default authSlice.reducer;
