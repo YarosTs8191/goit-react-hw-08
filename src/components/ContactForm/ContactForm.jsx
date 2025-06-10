@@ -10,7 +10,7 @@ const ContactForm = () => {
 
   const initialValues = {
     name: "",
-    phone: "",
+    number: "",
   };
 
   const validationSchema = Yup.object({
@@ -18,13 +18,15 @@ const ContactForm = () => {
       .min(3, "Too short!")
       .max(50, "Too long!")
       .required("Required"),
-    phone: Yup.string()
+    number: Yup.string()
       .min(3, "Too short!")
       .max(50, "Too long!")
+      .matches(/^\+?[0-9\s\-]{7,20}$/, "Phone must be a valid number")
       .required("Required"),
   });
 
   const handleSubmit = (values, { resetForm }) => {
+    console.log("Submitting contact:", values); // ✅ Перевіримо структуру
     const isDuplicate = contacts.some(
       (c) => c.name.toLowerCase() === values.name.toLowerCase()
     );
@@ -52,8 +54,13 @@ const ContactForm = () => {
         </label>
         <label className={css.label}>
           Number
-          <Field className={css.input} type="text" name="phone" />
-          <ErrorMessage name="phone" component="div" className={css.error} />
+          <Field
+            className={css.input}
+            type="text"
+            name="number"
+            placeholder="+380931234567"
+          />
+          <ErrorMessage name="number" component="div" className={css.error} />
         </label>
         <button className={css.button} type="submit">
           Add contact

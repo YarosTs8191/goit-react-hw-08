@@ -36,7 +36,10 @@ export const addContact = createAsyncThunk(
 
     try {
       const res = await axios.post("/contacts", contact, {
-        headers: { Authorization: `Bearer ${token}` },
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json", // ✅ обов'язково!
+        },
       });
       return res.data;
     } catch (error) {

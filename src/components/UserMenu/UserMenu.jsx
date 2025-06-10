@@ -1,7 +1,7 @@
 const UserMenu = () => {
   return (
     <div>
-      <p>UserMenu is working</p>
+      <p>Wellcome to UserMenu</p>
     </div>
   );
 };

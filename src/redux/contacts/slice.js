@@ -12,7 +12,6 @@ const initialState = {
 const contactsSlice = createSlice({
   name: "contacts",
   initialState,
-
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -37,7 +36,7 @@ const contactsSlice = createSlice({
       })
       .addCase(addContact.fulfilled, (state, action) => {
         state.loading = false;
-        state.items.push(action.payload); // сервер повертає вже з ID
+        state.items.push(action.payload);
       })
       .addCase(addContact.rejected, (state, action) => {
         state.loading = false;
@@ -58,12 +57,14 @@ const contactsSlice = createSlice({
       .addCase(deleteContact.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-      });
+      })
+
+      // ---------- logout ----------
       .addCase(logout.fulfilled, (state) => {
         state.items = [];
         state.loading = false;
         state.error = null;
-      })
+      });
   },
 });
 
@@ -72,14 +73,12 @@ export const selectContacts = (state) => state.contacts.items;
 export const selectLoading = (state) => state.contacts.loading;
 export const selectError = (state) => state.contacts.error;
 
-// ---------- Мемоізований селектор для фільтрації ----------
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectNameFilter],
-  (contacts, filter) => {
-    return contacts.filter((contact) =>
+  (contacts, filter) =>
+    contacts.filter((contact) =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
-    );
-  }
+    )
 );
 
 export default contactsSlice.reducer;
