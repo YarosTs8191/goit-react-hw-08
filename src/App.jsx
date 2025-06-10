@@ -11,8 +11,8 @@ import RegistrationPage from "./pages/RegistrationPage";
 import LoginPage from "./pages/LoginPage";
 import ContactsPage from "./pages/ContactsPage";
 
-import PrivateRoute from "./components/routes/PrivateRoute";
-import RestrictedRoute from "./components/routes/RestrictedRoute";
+import PrivateRoute from "./components/Routes/PrivateRoute";
+import RestrictedRoute from "./components/Routes/RestrictedRoute";
 
 const App = () => {
   const dispatch = useDispatch();
