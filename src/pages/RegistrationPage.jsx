@@ -1,9 +1,10 @@
 import RegistrationForm from "../components/RegistrationForm/RegistrationForm";
+// import css from "./RegistrationPage.module.css";
 
 const RegistrationPage = () => {
   return (
     <div style={{ padding: "20px" }}>
-      <h2>Register</h2>
+      <h2 className={css.link}>Register</h2>
       <RegistrationForm />
     </div>
   );

@@ -1,0 +1,13 @@
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 130px;
+  color: white;
+  background-color: #5a754d;
+  border: 2px solid cadetblue;
+  border-radius: 6px;
+  margin: 8px;
+  padding: 6px;
+  gap: 3px;
+}

@@ -1,0 +1,26 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 15px;
+  padding-bottom: 25px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 130px;
+  color: white;
+  background-color: #5a754d;
+  border: 2px solid cadetblue;
+  border-radius: 6px;
+  margin: 8px;
+  padding: 6px;
+  gap: 3px;
+}
+
+.link:hover {
+  background-color: #ace990;
+  color: #615d5d;
+}
