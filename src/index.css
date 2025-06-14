@@ -1,39 +1,74 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Segoe UI", Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   width: 100%;
+
+  /* Глобальні кольори */
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #1e1e1e;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --primary: #78b48b;
+  --secondary: #5a754d;
+  --accent: #ace990;
+  --bg-dark: #1e1e1e;
+  --bg-light: #ffffff;
+  --text-main: #f5f5f5;
+  --text-dark: #333;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  min-width: 320px;
+  margin: 0;
+  padding: 20px;
   min-height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Typography improvements */
+h1,
+h2,
+h3 {
+  font-weight: 600;
 }
 
 h1 {
   font-size: 3.2em;
-  line-height: 1.1;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+a {
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
 }
 
 button {
@@ -43,9 +78,15 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--secondary);
+  color: white;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.25s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--accent);
+  color: #333;
 }
 
 button:focus,
@@ -53,15 +94,31 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Utility container for layout */
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Mobile-first improvements */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
   }
-  a:hover {
-    color: #747bff;
+
+  .container {
+    padding: 10px;
   }
-  button {
-    background-color: #f9f9f9;
+
+  nav {
+    flex-direction: column;
+    gap: 8px;
   }
+}
+
+/* Optional: smoother scroll behavior */
+html {
+  scroll-behavior: smooth;
 }

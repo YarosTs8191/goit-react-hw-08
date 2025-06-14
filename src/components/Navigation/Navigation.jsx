@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import css from "./Navigation.module.css";
 import { GrHome, GrUserNew } from "react-icons/gr";
 
@@ -9,13 +9,24 @@ const Navigation = () => {
 
   return (
     <nav className={css.nav}>
-      <Link className={css.link} to="/">
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          isActive ? `${css.link} ${css.active}` : css.link
+        }
+      >
         Home <GrHome />
-      </Link>
+      </NavLink>
+
       {isLoggedIn && (
-        <Link className={css.link} to="/contacts">
+        <NavLink
+          to="/contacts"
+          className={({ isActive }) =>
+            isActive ? `${css.link} ${css.active}` : css.link
+          }
+        >
           Contacts <GrUserNew />
-        </Link>
+        </NavLink>
       )}
     </nav>
   );
